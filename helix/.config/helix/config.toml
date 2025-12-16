@@ -1,0 +1,102 @@
+theme = 'dark_plus'
+
+[editor]
+auto-format = false
+bufferline = 'multiple'
+popup-border = 'all'
+jump-label-alphabet = 'jfkdls;aurieowpqnvmcxz'
+end-of-line-diagnostics = 'hint'
+clipboard-provider = 'wayland'
+scrolloff = 10
+cursorline = true
+completion-replace = true
+trim-trailing-whitespace = true
+
+[editor.statusline]
+left = ['mode', 'spinner', 'version-control', 'file-name', 'read-only-indicator', 'file-modification-indicator']
+center = []
+right = ['diagnostics', 'primary-selection-length', 'position', 'position-percentage', 'file-encoding', 'file-line-ending', 'file-type']
+mode.normal = 'NORMAL'
+mode.insert = 'INSERT'
+mode.select = 'SELECT'
+
+[editor.lsp]
+display-progress-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+normal = 'block'
+insert = 'bar'
+select = 'underline'
+
+[editor.file-picker]
+hidden = false
+
+[editor.auto-save]
+focus-lost = true
+
+[editor.whitespace.render]
+space = 'all'
+tab = 'all'
+nbsp = 'all'
+nnbsp = 'all'
+
+[editor.soft-wrap]
+enable = true
+
+[editor.inline-diagnostics]
+cursor-line = 'warning'
+
+[keys.insert]
+'A-h' = 'move_char_left'
+'A-j' = 'move_visual_line_down'
+'A-k' = 'move_visual_line_up'
+'A-l' = 'move_char_right'
+
+[keys.normal]
+'C-h' = 'jump_view_left'
+'C-j' = 'jump_view_down'
+'C-k' = 'jump_view_up'
+'C-l' = 'jump_view_right'
+'A-j' = [ 'extend_to_line_bounds', 'delete_selection', 'paste_after' ]
+'A-k' = [ 'extend_to_line_bounds', 'delete_selection', 'move_line_up', 'paste_before' ]
+'A-J' = [ 'extend_to_line_bounds', 'yank', 'paste_after' ]
+'A-K' = [ 'extend_to_line_bounds', 'yank', 'paste_before' ]
+H = 'goto_previous_buffer'
+L = 'goto_next_buffer'
+X = 'select_line_above'
+'{' = '@5kzz'
+'}' = '@5jzz'
+
+[keys.normal.space]
+q = ':buffer-close!'
+
+[keys.normal.space.';']
+# blame line
+b = ':sh ~/.config/helix/util/blame_line.sh %{buffer_name} %{cursor_line}'
+# blame file
+B = ':open %sh{~/.config/helix/util/blame_file.sh %{buffer_name} %{cursor_line}}'
+# format
+f = ':format'
+# hunk under cursor
+h = ':sh ~/.config/helix/util/git-hunk.sh %{buffer_name} %{cursor_line} 3'
+# lazygit
+l = [ ':write-all', ':new', ':insert-output lazygit', ':buffer-close!', ':redraw', ':reload-all' ]
+# convert selection to single quotes
+q = ':pipe ~/.config/helix/util/to_single_quote.sh'
+# reset hunk under cursor
+r = ':reset-diff-change'
+# reset file
+R = [ 'select_all', ':reset-diff-change', 'goto_file_start' ]
+# open sql split
+s = [ ':hsplit-new', ':set-language sql', 'open_below' ]
+# query postgres
+S = [ ':clipboard-yank', ':hsplit-new', ':insert-output wl-paste | psql $DB_URL' ]
+# github open current file
+v = ':sh ~/.config/helix/util/web_branch.sh %{buffer_name} %{cursor_line}'
+# github open blame commit
+V = ':sh ~/.config/helix/util/web_commit.sh %{buffer_name} %{cursor_line}'
+# get filepath
+y = ':sh wl-copy %{buffer_name}'
+# toggle wrap
+w = ':toggle soft-wrap.enable'

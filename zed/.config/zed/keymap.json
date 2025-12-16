@@ -1,0 +1,61 @@
+[
+  {
+    "context": "Workspace || Editor || Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-x": ["pane::CloseActiveItem", { "close_pinned": false }],
+      "ctrl-/": "terminal_panel::Toggle",
+      "ctrl-shift-b": "workspace::ToggleLeftDock",
+      "alt-g": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" }
+      ]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-shift-f": "editor::Format",
+      "alt-shift-o": "editor::OrganizeImports",
+      "ctrl-c": ["editor::ToggleComments", { "advance_downwards": false }]
+    }
+  },
+  {
+    "context": "Terminal || Editor && vim_mode == insert",
+    "bindings": {
+      "alt-h": "editor::MoveLeft",
+      "alt-j": "editor::MoveDown",
+      "alt-k": "editor::MoveUp",
+      "alt-l": "editor::MoveRight"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "H": "pane::ActivatePreviousItem",
+      "L": "pane::ActivateNextItem",
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "space f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "n": ["workspace::SendKeystrokes", "n z z"],
+      "N": ["workspace::SendKeystrokes", "N z z"],
+      "U": "editor::Redo",
+      "{": ["workspace::SendKeystrokes", "5 k z z"],
+      "}": ["workspace::SendKeystrokes", "5 j z z"]
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space f": "file_finder::Toggle"
+    }
+  }
+]

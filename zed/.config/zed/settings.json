@@ -1,0 +1,43 @@
+{
+  "autosave": "on_focus_change",
+  "buffer_font_family": "Adwaita Mono",
+  "buffer_font_size": 13.5,
+  "buffer_line_height": "standard",
+  "collaboration_panel": { "button": false },
+  "diagnostics": { "inline": { "enabled": true } },
+  "extend_comment_on_newline": false,
+  "features": { "edit_prediction_provider": "none" },
+  "format_on_save": "off",
+  "gutter": { "folds": false, "min_line_number_digits": 2 },
+  "icon_theme": "VSCode Icons for Zed (Dark Official Icons)",
+  "inlay_hints": { "enabled": true },
+  "minimap": { "show": "always" },
+  "show_edit_predictions": false,
+  "tab_size": 2,
+  "theme": { "light": "VSCode Light Modern", "dark": "VSCode Dark Modern" },
+  "ui_font_family": "Adwaita Sans",
+  "ui_font_size": 15,
+  "vim_mode": true,
+  "languages": {
+    "TypeScript": {
+      "code_actions_on_format": { "source.fixAll.eslint": true },
+      "formatter": []
+    },
+    "TSX": {
+      "code_actions_on_format": { "source.fixAll.eslint": true },
+      "formatter": []
+    }
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "preferences": { "useAliasesForRenames": false } },
+        "vtsls": {
+          "autoUseWorkspaceTsdk": true,
+          "experimental": { "maxInlayHintLength": 43 }
+        }
+      }
+    }
+  }
+}
