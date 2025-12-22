@@ -6,7 +6,6 @@
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-x": ["pane::CloseActiveItem", { "close_pinned": false }],
       "ctrl-/": "terminal_panel::Toggle",
       "ctrl-shift-b": "workspace::ToggleLeftDock",
       "alt-g": [
@@ -39,6 +38,7 @@
       "L": "pane::ActivateNextItem",
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
+      "ctrl-x": ["pane::CloseActiveItem", { "close_pinned": false }],
       "space f": "file_finder::Toggle"
     }
   },

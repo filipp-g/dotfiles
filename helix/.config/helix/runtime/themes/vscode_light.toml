@@ -1,6 +1,3 @@
-# Author: VS Code Light Theme for Helix
-# Based on Visual Studio Code Light+ and Default Light Modern themes
-
 # SYNTAX
 "attribute"                 = "variable"
 "comment"                   = "green"
@@ -136,10 +133,7 @@ guide = "#D3D3D3"
 guide_active = "#939393"
 line_number = "#6E7681"
 line_number_active = "#171184"
-cursor = "#000080"
-# cursor = "#0451a5"
-# cursor = "#44b4cc"
-# cursor = "#005FB8"
+cursor = "#005FB8"
 selection = "#E8E8E8"
 inactive_selection = "#E5EBF1"
 selection_highlight = "#ADD6FF80"

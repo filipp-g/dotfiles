@@ -1,8 +1,9 @@
-theme = 'dark_plus'
+# theme = 'dark_plus'
+theme = 'vscode_light'
 
 [editor]
 auto-format = false
-bufferline = 'multiple'
+bufferline = 'always'
 popup-border = 'all'
 jump-label-alphabet = 'jfkdls;aurieowpqnvmcxz'
 end-of-line-diagnostics = 'hint'
@@ -45,13 +46,17 @@ nnbsp = 'all'
 enable = true
 
 [editor.inline-diagnostics]
-cursor-line = 'warning'
+cursor-line = 'disable'
 
 [keys.insert]
 'A-h' = 'move_char_left'
 'A-j' = 'move_visual_line_down'
 'A-k' = 'move_visual_line_up'
 'A-l' = 'move_char_right'
+
+[keys.select]
+'A-n' = ['search_selection', 'extend_search_next']
+'A-N' = ['search_selection', 'extend_search_prev']
 
 [keys.normal]
 'C-h' = 'jump_view_left'
@@ -62,6 +67,8 @@ cursor-line = 'warning'
 'A-k' = [ 'extend_to_line_bounds', 'delete_selection', 'move_line_up', 'paste_before' ]
 'A-J' = [ 'extend_to_line_bounds', 'yank', 'paste_after' ]
 'A-K' = [ 'extend_to_line_bounds', 'yank', 'paste_before' ]
+'A-n' = [ 'search_selection', 'extend_search_next' ]
+'A-N' = [ 'search_selection', 'extend_search_prev' ]
 H = 'goto_previous_buffer'
 L = 'goto_next_buffer'
 X = 'select_line_above'
@@ -79,7 +86,7 @@ B = ':open %sh{~/.config/helix/util/blame_file.sh %{buffer_name} %{cursor_line}}
 # format
 f = ':format'
 # hunk under cursor
-h = ':sh ~/.config/helix/util/git-hunk.sh %{buffer_name} %{cursor_line} 3'
+h = ':sh ~/.config/helix/util/git_hunk.sh %{buffer_name} %{cursor_line} 3'
 # lazygit
 l = [ ':write-all', ':new', ':insert-output lazygit', ':buffer-close!', ':redraw', ':reload-all' ]
 # convert selection to single quotes

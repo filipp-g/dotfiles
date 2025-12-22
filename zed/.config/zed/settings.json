@@ -1,4 +1,13 @@
 {
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-5",
+    },
+    "model_parameters": [],
+  },
+  "edit_predictions": { "mode": "subtle" },
   "autosave": "on_focus_change",
   "buffer_font_family": "Adwaita Mono",
   "buffer_font_size": 13.5,
@@ -9,7 +18,7 @@
   "features": { "edit_prediction_provider": "none" },
   "format_on_save": "off",
   "gutter": { "folds": false, "min_line_number_digits": 2 },
-  "icon_theme": "VSCode Icons for Zed (Dark Official Icons)",
+  "icon_theme": "Material Icon Theme",
   "inlay_hints": { "enabled": true },
   "minimap": { "show": "always" },
   "show_edit_predictions": false,
@@ -21,23 +30,29 @@
   "languages": {
     "TypeScript": {
       "code_actions_on_format": { "source.fixAll.eslint": true },
-      "formatter": []
+      "formatter": [],
     },
     "TSX": {
       "code_actions_on_format": { "source.fixAll.eslint": true },
-      "formatter": []
-    }
+      "formatter": [],
+    },
+    "Python": { "tab_size": 4 },
   },
   "lsp": {
     "vtsls": {
       "settings": {
         "typescript": {
-          "preferences": { "useAliasesForRenames": false } },
+          "preferences": { "useAliasesForRenames": false },
+        },
+        "inlayHints": {
+          "parameterNames": { "suppressWhenArgumentMatchesName": true },
+          "variableTypes": { "suppressWhenTypeMatchesName": true },
+        },
         "vtsls": {
           "autoUseWorkspaceTsdk": true,
-          "experimental": { "maxInlayHintLength": 43 }
-        }
-      }
-    }
-  }
+          "experimental": { "maxInlayHintLength": 43 },
+        },
+      },
+    },
+  },
 }

@@ -30,11 +30,11 @@ run = "onType"
 problems = { shortenToSingleLine = false }
 nodePath = ""
 codeAction = { disableRuleComment = { enable = true, location = "separateLine" } }
+workingDirectory = { mode = "auto" }
 
 [language-server.postgres-language-server]
 command = "/home/fil/.local/bin/postgres-language-server_x86_64-unknown-linux-gnu"
 args = [ "lsp-proxy", "--config-path=/home/fil/.config/postgres-lsp" ]
-# timeout = 10
 
 [[language]]
 name = "typescript"
@@ -53,6 +53,4 @@ language-servers = [
 [[language]]
 name = "sql"
 language-servers = ["postgres-language-server"]
-# auto-format = true
-# roots = ["postgrestools.jsonc", ".git"]
 file-types = ["sql"]

@@ -1,15 +1,17 @@
-background-opacity = 0.92
-# background-opacity = 0.88
+app-notifications = no-clipboard-copy
+background-opacity = 0.90
+cursor-color = #777777
+cursor-style-blink = true
 font-family = Adwaita Mono Nerd Font
 font-size = 10.5
+mouse-hide-while-typing = true
 theme = Vibrant Ink
-# theme = IR Black
-# theme = Adwaita Dark
+unfocused-split-opacity = 1.0
 window-height = 63
-window-width = 220
 window-new-tab-position = end
-app-notifications = no-clipboard-copy
+window-width = 220
 
+keybind = ctrl+shift+==equalize_splits
 keybind = ctrl+shift+w=close_surface
 
 keybind = ctrl+shift+h=goto_split:left
@@ -17,10 +19,3 @@ keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+l=goto_split:right
 
-# adjust-cursor-thickness = 50%
-# vibrant ink blue
-# cursor-color = #44b4cc
-# vscode blue
-# cursor-color = #0070c1
-# hot orange
-# cursor-color = #ff6e00
