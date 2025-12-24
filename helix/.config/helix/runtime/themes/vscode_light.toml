@@ -2,37 +2,34 @@
 "attribute"                 = "variable"
 "comment"                   = "green"
 "constant"                  = "constant"
-"constant.builtin"          = "blue"
-"constant.character"        = "blue"
+# "constant.builtin"          = "blue"
+# "constant.character"        = "blue"
 "constant.character.escape" = "red"
-"constant.numeric"          = "dark_green"
+"constant.numeric"          = "blue"
 "constructor"               = "type"
-"diff.delta"                = "dark_blue"
-"diff.minus"                = "red2"
-"diff.plus"                 = "dark_green"
+"diff.delta"                = "#3681c7"
+"diff.minus"                = "#f85149"
+"diff.plus"                 = "#2ea043"
 "function"                  = "fn_declaration"
 "function.builtin"          = "fn_declaration"
 "function.macro"            = "blue"
 "keyword"                   = "blue"
-"keyword.control"           = "purple"
-"keyword.directive"         = "blue"
 "label"                     = "text"
 "module"                    = "type"
 "namespace"                 = "type"
-"operator"                  = "text"
 "punctuation"               = "text"
 "punctuation.delimiter"     = "text"
 "special"                   = "purple"
-"string"                    = "red2"
-"string.regexp"             = "red3"
+"string"                    = "string_red"
+"string.regexp"             = "string_red"
 "tag"                       = "dark_red"
 "type"                      = "type"
 "type.builtin"              = "type"
 "type.enum.variant"         = "constant"
 "variable"                  = "variable"
 "variable.builtin"          = "blue"
-"variable.other.member"     = "variable"
-"variable.parameter"        = "variable"
+# "variable.other.member"     = "variable"
+# "variable.parameter"        = "variable"
 
 # MARKUP
 "markup.heading"       = { fg = "dark_red", modifiers = ["bold"] }
@@ -45,99 +42,89 @@
 "markup.quote"         = "dark_blue"
 "markup.raw"           = "dark_red"
 "markup.inserted"      = "dark_green"
-"markup.deleted"       = "red2"
+"markup.deleted"       = "string_red"
 "markup.changed"       = "dark_blue"
 
 # UI
 "ui.background"                  = { fg = "text", bg = "white" }
-# "ui.background"                  = { fg = "text", bg = "#1e1e1e" }
-"ui.window"                      = { bg = "widget" }
-"ui.popup"                       = { fg = "foreground", bg = "widget" }
-"ui.help"                        = { fg = "foreground", bg = "widget" }
-"ui.menu"                        = { fg = "foreground", bg = "widget" }
-"ui.menu.selected"               = { fg = "black", bg = "selection" }
-"ui.cursor"                      = { fg = "cursor", modifiers = ["reversed"] }
-"ui.cursor.primary"              = { fg = "cursor", modifiers = ["reversed"] }
+"ui.window"                      = { bg = "bg_lighter" }
+"ui.popup"                       = { fg = "text", bg = "bg_lighter" }
+"ui.help"                        = { fg = "text", bg = "bg_lighter" }
+"ui.menu"                        = { fg = "text", bg = "bg_lighter" }
+"ui.menu.selected"               = { fg = "text", bg = "bg_darker" }
+"ui.cursor"                      = { fg = "blue_accent", modifiers = ["reversed"] }
+"ui.cursor.primary"              = { fg = "navy", modifiers = ["reversed"] }
 "ui.cursor.match"                = { bg = "inactive_selection", underline.style = "line" }
 "ui.selection"                   = { bg = "inactive_selection" }
 "ui.selection.primary"           = { bg = "selection_highlight" }
-"ui.linenr"                      = { fg = "line_number" }
-"ui.linenr.selected"             = { fg = "line_number_active" }
-"ui.cursorline.primary"          = { bg = "white" }
-"ui.statusline"                  = { fg = "foreground", bg = "status_bar" }
-"ui.statusline.inactive"         = { fg = "foreground", bg = "status_bar" }
+"ui.linenr"                      = { fg = "light_gray" }
+"ui.linenr.selected"             = { fg = "navy" }
+"ui.cursorline.primary"          = { bg = "bg_lighter" }
+"ui.statusline"                  = { fg = "text", bg = "bg_lighter" }
+"ui.statusline.inactive"         = { fg = "text", bg = "bg_darker" }
 "ui.statusline.insert"           = { fg = "white", bg = "blue_accent" }
 "ui.statusline.select"           = { fg = "white", bg = "blue_accent" }
-"ui.bufferline"                  = { fg = "tab_inactive_fg", bg = "tab_inactive_bg" }
-"ui.bufferline.active"           = { fg = "tab_active_fg", bg = "white" }
-"ui.bufferline.background"       = { bg = "status_bar" }
-"ui.text"                        = { fg = "foreground" }
+"ui.bufferline"                  = { fg = "text", bg = "guide" }
+"ui.bufferline.active"           = { fg = "text", bg = "white" }
+"ui.bufferline.background"       = { bg = "bg_darker" }
+"ui.text"                        = { fg = "text" }
 "ui.text.focus"                  = { fg = "text" }
 "ui.text.directory"              = { fg = "blue" }
 "ui.text.inactive"               = { fg = "light_gray" }
 "ui.virtual.whitespace"          = { fg = "guide" }
 "ui.virtual.wrap"                = { fg = "guide" }
-"ui.virtual.ruler"               = { bg = "border" }
+"ui.virtual.ruler"               = { bg = "bg_lighter" }
 "ui.virtual.indent-guide"        = { fg = "guide" }
-"ui.virtual.inlay-hint"          = { fg = "light_gray"}
-"ui.virtual.jump-label"          = { fg = "red2", modifiers = ["bold"] }
-"ui.highlight.frameline"         = { bg = "selection" }
-"ui.debug.active"                = { fg = "gold" }
+"ui.virtual.inlay-hint"          = { fg = "light_gray", bg = "bg_lighter" }
+"ui.virtual.jump-label"          = { fg = "info", bg = "info_bg", modifiers = ["bold"] }
+"ui.highlight.frameline"         = { bg = "bg_darker" }
+"ui.debug.active"                = { fg = "warning" }
 "ui.debug.breakpoint"            = { fg = "red" }
 "ui.picker.header.column"        = { underline.style = "line" }
 "ui.picker.header.column.active" = { fg = "text", underline.style = "line" }
-"warning"                        = { fg = "gold" }
-"error"                          = { fg = "error_red" }
-"info"                           = { fg = "blue_accent" }
-"hint"                           = { fg = "light_gray" }
-"diagnostic.error".underline     = { color = "error_red", style = "curl" }
-"diagnostic".underline           = { color = "gold", style = "curl" }
+"error"                          = { fg = "error", bg = "error_bg" }
+"warning"                        = { fg = "warning", bg = "warning_bg" }
+"info"                           = { fg = "info", bg = "info_bg" }
+"hint"                           = { fg = "hint", bg = "hint_bg" }
+"diagnostic.error".underline     = { color = "error", style = "curl" }
+"diagnostic".underline           = { color = "warning", style = "curl" }
 "diagnostic.unnecessary"         = { modifiers = ["dim"] }
 "diagnostic.deprecated"          = { modifiers = ["crossed_out"] }
 
 rainbow = ["#0070C1", "#AF00DB", "#098658"]
 
 [palette]
-# Base colors
-white = "#FFFFFF"
-black = "#000000"
-text = "#000000"
-foreground = "#3B3B3B"
-
-# Syntax colors
-blue = "#0000ff"
+blue = "#0000FF"
 blue_accent = "#005FB8"
-dark_blue = "#0451a5"
+dark_blue = "#0451A5"
+dark_green = "#098658"
+dark_red = "#800000"
+green = "#008000"
+light_gray = "#767676"
 navy = "#000080"
 purple = "#AF00DB"
-green = "#008000"
-dark_green = "#098658"
 red = "#EE0000"
-red2 = "#a31515"
-red3 = "#811f3f"
-error_red = "#F85149"
-dark_red = "#800000"
-gold = "#cca700"
+white = "#FFFFFF"
 
-# Token colors
-type = "#267f99"
-fn_declaration = "#795E26"
-variable = "#001080"
 constant = "#0070C1"
+fn_declaration = "#795E26"
+string_red = "#A31515"
+text = "#3B3B3B"
+type = "#267F99"
+variable = "#001080"
 
-# UI colors
-status_bar = "#F8F8F8"
-widget = "#F8F8F8"
-border = "#E5E5E5"
+error = "#FF1212"
+error_bg = "#FEF6F6"
+warning = "#BF8803"
+warning_bg = "#FCF9F2"
+info = "#005FB8"
+info_bg = "#F2F7FB"
+hint = "#868686"
+hint_bg = "#F9F9F9"
+
+bg_darker = "#E8E8E8"
+bg_lighter = "#F8F8F8"
 guide = "#D3D3D3"
 guide_active = "#939393"
-line_number = "#6E7681"
-line_number_active = "#171184"
-cursor = "#005FB8"
-selection = "#E8E8E8"
 inactive_selection = "#E5EBF1"
-selection_highlight = "#ADD6FF80"
-light_gray = "#767676"
-tab_active_fg = "#3B3B3B"
-tab_inactive_fg = "#868686"
-tab_inactive_bg = "#F8F8F8"
+selection_highlight = "#ADD6FF"

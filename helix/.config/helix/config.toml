@@ -1,4 +1,4 @@
-# theme = 'dark_plus'
+# theme = 'vscode_dark'
 theme = 'vscode_light'
 
 [editor]
@@ -16,7 +16,7 @@ trim-trailing-whitespace = true
 [editor.statusline]
 left = ['mode', 'spinner', 'version-control', 'file-name', 'read-only-indicator', 'file-modification-indicator']
 center = []
-right = ['diagnostics', 'primary-selection-length', 'position', 'position-percentage', 'file-encoding', 'file-line-ending', 'file-type']
+right = ['diagnostics', 'position', 'position-percentage', 'file-encoding', 'file-line-ending', 'file-type']
 mode.normal = 'NORMAL'
 mode.insert = 'INSERT'
 mode.select = 'SELECT'
@@ -36,44 +36,42 @@ hidden = false
 [editor.auto-save]
 focus-lost = true
 
-[editor.whitespace.render]
-space = 'all'
-tab = 'all'
-nbsp = 'all'
-nnbsp = 'all'
-
-[editor.soft-wrap]
-enable = true
+[editor.indent-guides]
+render = true
 
 [editor.inline-diagnostics]
 cursor-line = 'disable'
 
 [keys.insert]
-'A-h' = 'move_char_left'
-'A-j' = 'move_visual_line_down'
-'A-k' = 'move_visual_line_up'
-'A-l' = 'move_char_right'
+C-c = 'toggle_comments'
+A-h = 'move_char_left'
+A-j = 'move_visual_line_down'
+A-k = 'move_visual_line_up'
+A-l = 'move_char_right'
 
 [keys.select]
-'A-n' = ['search_selection', 'extend_search_next']
-'A-N' = ['search_selection', 'extend_search_prev']
+A-J = '@5zj'
+A-K = '@5zk'
+# A-n = ['search_selection', 'extend_search_next']
+# A-N = ['search_selection', 'extend_search_prev']
 
 [keys.normal]
-'C-h' = 'jump_view_left'
-'C-j' = 'jump_view_down'
-'C-k' = 'jump_view_up'
-'C-l' = 'jump_view_right'
-'A-j' = [ 'extend_to_line_bounds', 'delete_selection', 'paste_after' ]
-'A-k' = [ 'extend_to_line_bounds', 'delete_selection', 'move_line_up', 'paste_before' ]
-'A-J' = [ 'extend_to_line_bounds', 'yank', 'paste_after' ]
-'A-K' = [ 'extend_to_line_bounds', 'yank', 'paste_before' ]
-'A-n' = [ 'search_selection', 'extend_search_next' ]
-'A-N' = [ 'search_selection', 'extend_search_prev' ]
+C-h = 'jump_view_left'
+C-j = 'jump_view_down'
+C-k = 'jump_view_up'
+C-l = 'jump_view_right'
+A-j = [ 'extend_to_line_bounds', 'delete_selection', 'paste_after' ]
+A-k = [ 'extend_to_line_bounds', 'delete_selection', 'move_line_up', 'paste_before' ]
+A-J = '@5gjzz'
+A-K = '@5gkzz'
+A-F = ':format'
+'A-<' = [ 'extend_to_line_bounds', 'yank', 'paste_after' ]
+'A->' = [ 'extend_to_line_bounds', 'yank', 'paste_before' ]
+# A-n = [ 'search_selection', 'extend_search_next' ]
+# A-N = [ 'search_selection', 'extend_search_prev' ]
 H = 'goto_previous_buffer'
 L = 'goto_next_buffer'
 X = 'select_line_above'
-'{' = '@5kzz'
-'}' = '@5jzz'
 
 [keys.normal.space]
 q = ':buffer-close!'
@@ -83,8 +81,6 @@ q = ':buffer-close!'
 b = ':sh ~/.config/helix/util/blame_line.sh %{buffer_name} %{cursor_line}'
 # blame file
 B = ':open %sh{~/.config/helix/util/blame_file.sh %{buffer_name} %{cursor_line}}'
-# format
-f = ':format'
 # hunk under cursor
 h = ':sh ~/.config/helix/util/git_hunk.sh %{buffer_name} %{cursor_line} 3'
 # lazygit
@@ -94,9 +90,9 @@ q = ':pipe ~/.config/helix/util/to_single_quote.sh'
 # reset hunk under cursor
 r = ':reset-diff-change'
 # reset file
-R = [ 'select_all', ':reset-diff-change', 'goto_file_start' ]
+R = [ 'goto_line_start', 'save_selection', 'select_all', ':reset-diff-change', 'jump_backward', ':update' ]
 # open sql split
-s = [ ':hsplit-new', ':set-language sql', 'open_below' ]
+s = [ ':hsplit ~/.config/postgres-lsp/queries.sql' ]
 # query postgres
 S = [ ':clipboard-yank', ':hsplit-new', ':insert-output wl-paste | psql $DB_URL' ]
 # github open current file

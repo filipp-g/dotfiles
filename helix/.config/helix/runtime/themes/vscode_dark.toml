@@ -1,0 +1,27 @@
+inherits = "dark_plus"
+
+"operator"                  = ""
+
+"ui.background"                  = { fg = "light_gray", bg = "background" }
+"ui.bufferline"                  = { fg = "text", bg = "widget" }
+"ui.bufferline.active"           = { fg = "white", bg = "blue" }
+"ui.bufferline.background"       = { bg = "#181818" }
+"ui.virtual.inlay-hint"          = { fg = "dark_gray5", bg = "widget" }
+"error"                          = { fg = "error", bg = "error_bg" }
+"warning"                        = { fg = "warning", bg = "warning_bg" }
+"info"                           = { fg = "info", bg = "info_bg" }
+"hint"                           = { fg = "hint", bg = "hint_bg" }
+"diagnostic.error".underline     = { color = "error", style = "curl" }
+"diagnostic".underline           = { color = "warning", style = "curl" }
+
+[palette]
+background = "#1F1F1F"
+
+error = "#FF1212"
+error_bg = "#2A1E1E"
+warning = "#CCA700"
+warning_bg = "#27251D"
+info = "#005FB8"
+info_bg = "#1d2226"
+hint = "#484848"
+hint_bg = "#222222"

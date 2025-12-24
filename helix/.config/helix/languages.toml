@@ -5,20 +5,24 @@ config.hostInfo = "helix"
 
 [language-server.typescript-language-server.config.vtsls]
 autoUseWorkspaceTsdk = true
-experimental = { maxInlayHintLength = 43, "completion.enableServerSideFuzzyMatch" = true }
+experimental.maxInlayHintLength = 43
+experimental.completion.enableServerSideFuzzyMatch = true
 
 [language-server.typescript-language-server.config.typescript]
 inlayHints.enumMemberValues.enabled = true
 inlayHints.functionLikeReturnTypes = true
 inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterNames.suppressWhenArgumentMatchesName = true
 inlayHints.parameterTypes.enabled = true
 inlayHints.propertyDeclarationTypes.enabled = true
 inlayHints.variableTypes.enabled = true
+inlayHints.variableTypes.suppressWhenTypeMatchesName = true
 preferences.importModuleSpecifier = "relative"
 preferences.importModuleSpecifierEnding = "auto"
 preferences.quoteStyle = "single"
 preferences.useAliasesForRenames = false
 suggest.completeFunctionCalls = true
+tsserver.maxTsServerMemory = 8192
 updateImportsOnFileMove.enabled = "always"
 
 [language-server.vscode-eslint-language-server.config]
@@ -33,8 +37,8 @@ codeAction = { disableRuleComment = { enable = true, location = "separateLine" }
 workingDirectory = { mode = "auto" }
 
 [language-server.postgres-language-server]
-command = "/home/fil/.local/bin/postgres-language-server_x86_64-unknown-linux-gnu"
-args = [ "lsp-proxy", "--config-path=/home/fil/.config/postgres-lsp" ]
+command = "postgres-language-server_x86_64-unknown-linux-gnu"
+args = [ "lsp-proxy" ]
 
 [[language]]
 name = "typescript"
